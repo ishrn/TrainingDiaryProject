@@ -1,6 +1,6 @@
 package com.training.diary.services;
 
-import com.training.diary.domains.Customer;
+import com.training.diary.models.Customer;
 import com.training.diary.repositories.CustomerRepository;
 import org.springframework.stereotype.Service;
 

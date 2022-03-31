@@ -1,6 +1,6 @@
 package com.training.diary.services;
 
-import com.training.diary.domains.Customer;
+import com.training.diary.models.Customer;
 
 import java.util.Optional;
 

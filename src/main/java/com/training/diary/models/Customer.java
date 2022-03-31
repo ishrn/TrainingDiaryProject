@@ -1,4 +1,4 @@
-package com.training.diary.domains;
+package com.training.diary.models;
 
 import lombok.*;
 
