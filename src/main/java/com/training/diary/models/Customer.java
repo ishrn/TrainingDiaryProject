@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Getter
 @Builder
 @ToString
 @EqualsAndHashCode
