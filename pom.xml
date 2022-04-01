@@ -83,6 +83,9 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<argLine>-Dspring.profiles.active=${test.profile}</argLine>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
