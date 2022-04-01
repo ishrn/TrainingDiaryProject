@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Builder
 @ToString
 @EqualsAndHashCode
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Customer {
 
