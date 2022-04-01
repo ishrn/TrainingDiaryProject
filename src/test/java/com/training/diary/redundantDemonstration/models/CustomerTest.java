@@ -38,8 +38,6 @@ class CustomerTest {
     void hashCodeTest() {
         Customer customerFergus1 = Customer.builder().id(customerFergusId).firstName(customerFergusFirstName).lastName(customerFergusLastName).email(customerFergusEmail).build();
         Customer customerFergus2 = Customer.builder().id(customerFergusId).firstName(customerFergusFirstName).lastName(customerFergusLastName).email(customerFergusEmail).build();
-        System.out.println(customerFergus1.hashCode());
-        System.out.println(customerFergus2.hashCode());
         assertEquals(customerFergus1.hashCode(),customerFergus2.hashCode());
     }
 }
