@@ -1,0 +1,5 @@
+ignore-failures:
+  java:
+    - org.apache.maven.plugins/maven-failsafe-plugin
+    - org.apache.maven.plugins/maven-surefire-plugin
+    - org.jacoco/jacoco-maven-plugin
