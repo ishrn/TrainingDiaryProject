@@ -1,4 +1,4 @@
-Spring Training Diary Application Sample
+## Spring Training Diary Application Sample
 ___
 
 [![Active Development](https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
@@ -8,3 +8,6 @@ ___
 
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/ishrn/TrainingDiaryProject.svg)](http://isitmaintained.com/project/ishrn/TrainingDiaryProject "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/ishrn/TrainingDiaryProject.svg)](http://isitmaintained.com/project/ishrn/TrainingDiaryProject "Percentage of issues still open")
+
+[![DeepSource](https://deepsource.io/gh/ishrn/TrainingDiaryProject.svg/?label=active+issues&show_trend=true&token=l5aodmI2ytBGceS7kgkpHh5s)](https://deepsource.io/gh/ishrn/TrainingDiaryProject/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/ishrn/TrainingDiaryProject.svg/?label=resolved+issues&show_trend=true&token=l5aodmI2ytBGceS7kgkpHh5s)](https://deepsource.io/gh/ishrn/TrainingDiaryProject/?ref=repository-badge)
