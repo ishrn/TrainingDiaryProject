@@ -1,0 +1,9 @@
+package com.training.diary.repositories;
+
+import com.training.diary.models.ExerciseFile;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.NoRepositoryBean;
+
+@NoRepositoryBean
+public interface ExerciseFileRepository<T extends ExerciseFile> extends JpaRepository<T,Long> {
+}
