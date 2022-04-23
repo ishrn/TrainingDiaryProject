@@ -146,8 +146,8 @@
                         </goals>
                         <configuration>
                             <dataFile>${project.reporting.outputDirectory}/jacoco-ut-data.exec</dataFile>
+                            <rules>
 <!--                            temporarily disabled minimum expected coverage-->
-<!--                            <rules>-->
 <!--                                <rule>-->
 <!--                                    <element>BUNDLE</element>-->
 <!--                                    <limits>-->
@@ -158,7 +158,7 @@
 <!--                                        </limit>-->
 <!--                                    </limits>-->
 <!--                                </rule>-->
-<!--                            </rules>-->
+                            </rules>
                         </configuration>
                     </execution>
                 </executions>
