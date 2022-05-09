@@ -1,6 +1,5 @@
 package com.training.diary.models;
 
-import com.training.diary.models.*;
 import lombok.SneakyThrows;
 import org.hibernate.LazyInitializationException;
 import org.junit.jupiter.api.AfterAll;
@@ -44,7 +43,7 @@ public class ExerciseImageVideoCategory_IT {
     @BeforeAll
     public void setupBeforeAll(){
         TransactionStatus transaction = platformTransactionManager.getTransaction(TransactionDefinition.withDefaults());
-        Exercise exercise = Exercise.builder().build();
+        Exercise exercise = Exercise.builder().category(Category.LEGS).build();
         entityManager.persist(exercise);
         platformTransactionManager.commit(transaction);
         exerciseId=exercise.getId();

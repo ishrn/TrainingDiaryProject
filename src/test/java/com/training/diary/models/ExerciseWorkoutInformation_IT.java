@@ -1,10 +1,6 @@
 package com.training.diary.models;
 
-import com.training.diary.models.Exercise;
-import com.training.diary.models.ExerciseWorkoutInformation;
 import com.training.diary.models.ExerciseWorkoutInformation.ExerciseWorkoutId;
-import com.training.diary.models.Information;
-import com.training.diary.models.Workout;
 import org.hibernate.LazyInitializationException;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -42,7 +38,7 @@ public class ExerciseWorkoutInformation_IT {
     @BeforeAll
     public void setupBeforeAll(){
         TransactionStatus transaction = platformTransactionManager.getTransaction(TransactionDefinition.withDefaults());
-        Exercise exercise = Exercise.builder().build();
+        Exercise exercise = Exercise.builder().category(Category.LEGS).build();
         Workout workout = Workout.builder().build();
         Information information = new Information();
         ExerciseWorkoutInformation exerciseWorkoutInformation = ExerciseWorkoutInformation.builder().exercise(exercise).workout(workout).information(information).build();
