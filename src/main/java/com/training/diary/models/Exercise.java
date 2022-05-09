@@ -20,6 +20,7 @@ public class Exercise {
     private Long id;
     private String name;
     @Enumerated(EnumType.STRING)
+    @NotNull
     private Category category;
     @Lob
     private Clob description;
