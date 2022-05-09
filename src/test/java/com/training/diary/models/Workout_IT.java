@@ -1,5 +1,6 @@
 package com.training.diary.models;
 
+import com.training.diary.repositories.WorkoutRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.parallel.Execution;
@@ -27,10 +28,11 @@ public class Workout_IT {
     @Autowired
     private PlatformTransactionManager platformTransactionManager;
 
+    @Autowired
+    private WorkoutRepository workoutRepository;
+
     @PersistenceContext
     private EntityManager entityManager;
-
-    private Long workoutId;
 
     @Test
     @Execution(ExecutionMode.SAME_THREAD)
@@ -51,7 +53,7 @@ public class Workout_IT {
             entityManager.persist(workout);
             entityManager.flush();
             entityManager.clear();
-            workoutId=workout.getId();
+            Long workoutId=workout.getId();
 
             TimeZone.setDefault(TimeZone.getTimeZone(asia));
             workout = entityManager.find(Workout.class, workoutId);
@@ -65,5 +67,33 @@ public class Workout_IT {
         finally {
             TimeZone.setDefault(defaultTimeZone);
         }
+    }
+
+    @Test
+    public void should_returnCategoriesString_WhenCategoriesRequested(){
+        Exercise exercise1 = Exercise.builder().category(Category.LEGS).build();
+        Exercise exercise2 = Exercise.builder().category(Category.LEGS).build();
+        Exercise exercise3 = Exercise.builder().category(Category.ARMS).build();
+        entityManager.persist(exercise1);
+        entityManager.persist(exercise2);
+        entityManager.persist(exercise3);
+
+        Customer customer = Customer.builder().build();
+
+        Workout workout1 = Workout.builder().build();
+        ExerciseWorkoutInformation exerciseWorkoutInformation1 = ExerciseWorkoutInformation.builder().workout(workout1).exercise(exercise1).build();
+        ExerciseWorkoutInformation exerciseWorkoutInformation2 = ExerciseWorkoutInformation.builder().workout(workout1).exercise(exercise2).build();
+        ExerciseWorkoutInformation exerciseWorkoutInformation3 = ExerciseWorkoutInformation.builder().workout(workout1).exercise(exercise3).build();
+
+        entityManager.persist(customer);
+        entityManager.persist(exerciseWorkoutInformation1);
+        entityManager.persist(exerciseWorkoutInformation2);
+        entityManager.persist(exerciseWorkoutInformation3);
+
+        entityManager.flush();
+        entityManager.clear();
+
+        assertEquals(2,workoutRepository.getCategories(workout1.getId()).size());
+        assertEquals("Arms, Legs",workoutRepository.getCategoriesAsSortedString(workout1.getId()));
     }
 }
